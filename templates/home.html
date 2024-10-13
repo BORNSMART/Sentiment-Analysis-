@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <section class="hero bg-primary text-white text-center py-5 slide-in">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="display-4">Welcome to EmotiSense</h1>
+                <p class="lead mt-3">Understand your emotional state and improve your mental well-being.</p>
+                <a href="{{ url_for('predict') }}" class="btn btn-light btn-lg mt-4">Try EmotiSense Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="my-5 slide-in">
+        <div id="emotiCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Emotion 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Emotion 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1527236438218-d82077ae1f85?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Emotion 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#emotiCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#emotiCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section class="my-5 text-center slide-in">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card h-100 border-0">
+                    <div class="card-body">
+                        <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Mental Health Insights</h5>
+                        <p class="card-text">Gain valuable insights into your emotional state through text analysis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0">
+                    <div class="card-body">
+                        <i class="fas fa-heart fa-3x text-danger mb-3"></i>
+                        <h5 class="card-title">Emotion Detection</h5>
+                        <p class="card-text">Our AI tool detects emotions like joy, sadness, and more based on your input.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0">
+                    <div class="card-body">
+                        <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Improve Well-being</h5>
+                        <p class="card-text">Identify emotions and take steps to enhance your mental health.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="text-center py-5 bg-light slide-in">
+        <h2>How It Works</h2>
+        <p class="lead mb-5">EmotiSense analyzes your text and provides insights into your emotional state.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <i class="fas fa-pencil-alt fa-3x text-primary mb-3"></i>
+                <h5>Step 1: Enter Your Thoughts</h5>
+                <p>Write down your thoughts in the text box for analysis.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-robot fa-3x text-danger mb-3"></i>
+                <h5>Step 2: AI Analysis</h5>
+                <p>Our AI model processes your input and predicts the dominant emotion.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-heartbeat fa-3x text-success mb-3"></i>
+                <h5>Step 3: Get Insights</h5>
+                <p>Receive insights and take steps to improve your well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="py-5 text-center slide-in">
+        <h3>Ready to Explore Your Emotions?</h3>
+        <p class="lead">Discover your emotional state and take control of your mental well-being.</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg">Analyze Your Emotions Now</a>
+    </section>
+</div>
+{% endblock %}

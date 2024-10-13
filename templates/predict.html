@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Predict Mental Health{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-5">EmotiSense: Mental Health Emotion Analyzer</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="POST" class="mb-4">
+                <div class="form-group">
+                    <textarea name="text" class="form-control" rows="4" placeholder="Enter your thoughts here...">{{ result.text if result else '' }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-3">Analyze Emotion</button>
+            </form>
+            {% if result %}
+                <div class="card emotion-card {{ result.emotion }}">
+                    <div class="card-body">
+                        <h5 class="card-title">Detected Emotion: {{ result.emotion|capitalize }}</h5>
+                        <p class="card-text">Confidence: {{ "%.2f"|format(result.confidence) }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
